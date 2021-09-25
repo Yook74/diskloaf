@@ -5,10 +5,12 @@ from progressbar import Bar, AdaptiveETA, progressbar
 
 NUM_CHUNKS = 4096
 FILENAME = 'loaf'
+ROOM_TO_LEAVE = 4e3
 BYTE_TO_WRITE = b'\0'
 
 free_space_info = os.statvfs('.')
 free_space_gb = (free_space_info.f_bsize * free_space_info.f_bavail) / 2**30
+free_space_gb -= ROOM_TO_LEAVE
 chunk_size_gb = free_space_gb / NUM_CHUNKS
 
 print(f'{free_space_gb:.2} GB free')
