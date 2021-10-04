@@ -5,4 +5,5 @@ A tool for creating a large file (a loaf) in order to wipe a hard disk written b
 ## usage
 
 `pip install diskloaf`
+
 `diskloaf -h`
